@@ -1,0 +1,49 @@
+1) Use the cat command to create a file containing the following data.
+Call it myfile
+use tabs to separate the fields.
+1001 RAM 97
+1025 ARUN 86
+1013 RAJU 93
+ANS:-
+anandhu@anandhu-VirtualBox:~$ cat >myfile.txt
+1001 RAM 97
+1025 ARUN 86
+1013 RAJU 93
+anandhu@anandhu-VirtualBox:~$ cat myfile.txt
+1001 RAM 97
+1025 ARUN 86
+1013 RAJU 93
+
+2) Use the cut and paste commands to swap fields 2 and 3 of myfile.
+ANS:-
+anandhu@anandhu-VirtualBox:~$ cut -f1,3 myfile.txt > cat && cut -f2
+myfile.txt | paste cat -
+1001 97 RAM
+1025 86 ARUN
+1013 93 RAJU
+3) Print first 2 rows of the file myfile
+ANS:-
+anandhu@anandhu-VirtualBox:~$ cat myfile.txt | head -n 2
+1001 RAM 97
+1025 ARUN 86
+
+4) Print the contents of 3rd row only of the file myfile
+ANS:-
+anandhu@anandhu-VirtualBox:~$ cat myfile.txt | tail -n 1
+1013 RAJU 93
+
+5) Print the names only from the file myfile
+ANS:-
+anandhu@anandhu-VirtualBox:~$ cat myfile.txt | head -n 3 | cut -f2
+myfile.txt
+RAM
+ARUN
+RAJU
+
+6) Count the number of Lines, words and characters from the previous
+output
+
+ANS:-
+anandhu@anandhu-VirtualBox:~$ cat myfile.txt | head -n 3 |cut -f2
+myfile.txt |wc
+3 3 14
